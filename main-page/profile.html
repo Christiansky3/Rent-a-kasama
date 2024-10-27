@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile - Rent-A-Kasama</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Rent-A-Kasama</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Main Page</a></li>
+                <li><a href="../index.html">Logout</a></li> <!-- Link for logging out -->
+            </ul>
+        </nav>
+    </header>
+
+    <section id="profile">
+        <div class="content">
+            <h2>Your Profile</h2>
+            <p>Email: <span id="userEmail"></span></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Rent-A-Kasama. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('userEmail').textContent = localStorage.getItem('userEmail');
+    </script>
+</body>
+</html>

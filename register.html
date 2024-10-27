@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasama Worker Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Register as a Kasama Worker</h1>
+    </header>
+
+    <form id="kasama-worker-form">
+        <fieldset>
+            <legend><strong>Personal Information</strong></legend>
+
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="18" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="" disabled selected>Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="relationshipStatus">Relationship Status:</label>
+            <select id="relationshipStatus" name="relationshipStatus" required>
+                <option value="" disabled selected>Select</option>
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>
+                <option value="In a Relationship">In a Relationship</option>
+            </select>
+            
+            <label for="positionApplyingFor">Position Applying For:</label>
+            <select id="positionApplyingFor" name="positionApplyingFor" required>
+                <option value="" disabled selected>Select</option>
+                <option value="Boyfriend Companion">Boyfriend Companion</option>
+                <option value="Girlfriend Companion">Girlfriend Companion</option>
+                <option value="Friend Companion">Friend Companion</option>
+                <option value="Elder Companion">Elder Companion</option>
+                <option value="Event Companion">Event Companion</option>
+                <option value="Family-Like Companion">Family-Like Companion</option>
+            </select>
+
+            <label for="citizenship">Citizenship:</label>
+            <input type="text" id="citizenship" name="citizenship" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="contactNumber">Contact Number:</label>
+            <input type="tel" id="contactNumber" name="contactNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+        </fieldset>
+
+        <fieldset>
+            <legend><strong>Background Check & Additional Information</strong></legend>
+
+            <label for="experience">Experience:</label>
+            <textarea id="experience" name="experience" rows="4" placeholder="Describe any relevant experience..." required></textarea>
+
+            <label for="references">References:</label>
+            <input type="text" id="references" name="references" placeholder="Reference Name and Contact" required>
+
+            <label for="socialProfiles">Social Media Profiles (optional):</label>
+            <input type="url" id="socialProfiles" name="socialProfiles" placeholder="Link to social media profile(s)">
+
+            <label for="criminalRecord">Criminal Record:</label>
+            <select id="criminalRecord" name="criminalRecord" required>
+                <option value="" disabled selected>Have you ever been convicted of a crime?</option>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+
+            <label for="profilePhoto">Profile Photo:</label>
+            <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*" required>
+
+        </fieldset>
+
+        <fieldset>
+            <legend><strong>Consent & Agreement</strong></legend>
+
+            <label>
+                <input type="checkbox" name="consent" required> I consent to a background check.
+            </label>
+            <label>
+                <input type="checkbox" name="terms" required> I agree to the <a href="#">terms and conditions</a> of the platform.
+            </label>
+
+        </fieldset>
+
+        <button type="submit">Submit Application</button>
+    </form>
+
+    <script src="scripts/worker-registration.js"></script>
+</body>
+</html>

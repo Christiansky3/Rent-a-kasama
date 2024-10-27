@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Sign Up - Rent-A-Kasama</title>
+        <link rel="stylesheet" href="../assets/css/signup-styles.css"> <!-- Use ../ to navigate one directory up -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    </head>       
+<body>
+    <section class="auth-section">
+        <div class="auth-container">
+            <h2>Create Your Rent-A-Kasama Account</h2>
+            <form id="signupForm">
+                <!-- Name -->
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+            
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+            
+                <!-- Confirm Password -->
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+            
+                <!-- Sign Up Button -->
+                <button type="submit" class="cta-btn">Sign Up</button>
+            </form>
+            <p class="redirect-text">Already have an account? <a href="file:///C:/Rent-a-kasama/index.html">Login here</a>.</p>            
+        </div>
+    </section>
+
+   <!-- JavaScript for form handling -->
+<script>
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevents the default form submission behavior
+
+        // Retrieve form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        // Basic validation for password match
+        if (password !== confirmPassword) {
+            alert("Passwords do not match. Please try again.");
+            return;
+        }
+
+        // Create an object for the form data
+        const formData = {
+            name: name,
+            email: email,
+            password: password
+        };
+
+        // Send form data to the server using fetch API
+        fetch('http://localhost:3000/signup', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Handle success response from the server
+            if (data.success) {
+                alert("Sign-up successful! Please log in to continue.");
+                window.location.replace('../index.html'); // Adjust the redirect path as needed
+            } else {
+                alert("Error: " + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+</script>
+</body>
+</html>

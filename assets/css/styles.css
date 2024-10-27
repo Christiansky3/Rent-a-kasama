@@ -1,0 +1,647 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Add space between the items */
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-links li a:hover {
+    color: #f39c12;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: url('assets/images/hero-background.jpg'); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero-section .content {
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.hero-section .content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Shadow for text */
+}
+
+.hero-section .content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    color: #f0f0f0;
+}
+
+.cta-btn {
+    background-color: #f39c12;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn:hover {
+    background-color: #e67e22;
+}
+
+/* Category Section */
+.category-section {
+    padding: 70px 20px;
+    text-align: center;
+    background-color: #ecf0f1;
+}
+
+.category-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    color: #2c3e50;
+}
+
+.category-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    color: #f39c12;
+    margin-bottom: 15px;
+}
+
+.card p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.book-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color: #2980b9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px; /* Set a
+.modal-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px; /* Set a maximum width */
+    width: 100%;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #3498db;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column; /* Stack inputs vertically */
+    align-items: flex-start; /* Align form items to the left */
+    text-align: left;
+    gap: 15px; /* Add spacing between input fields */
+}
+
+.modal-content form label {
+    font-size: 1rem;
+    color: #333;
+}
+
+.modal-content form input {
+    width: 100%; /* Make input fields take up full width */
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.modal-content form button {
+    width: 100%; /* Button spans full width */
+    padding: 12px 20px;
+    border: none;
+    background-color: #f39c12;
+    color: white;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content form button:hover {
+    background-color: #e67e22;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content p {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.modal-content p a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.modal-content p a:hover {
+    color: #2980b9;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+/* Auth Section (for Sign-Up and Login Pages) */
+.auth-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f5f7fa;
+    min-height: 100vh; /* Make sure it covers the full height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: left;
+}
+
+.auth-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #3498db;
+}
+
+.auth-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.auth-container form label {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.auth-container form input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.auth-container form button {
+    width: 100%; /* Make button span full width */
+    padding: 12px 20px;
+    border: none;
+    background-color: #f39c12;
+    color: white;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container form button:hover {
+    background-color: #e67e22;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.redirect-text {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.redirect-text a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.redirect-text a:hover {
+    color: #2980b9;
+}
+/* General styles for the companion pages */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9;
+}
+
+/* Header styles */
+header {
+    background-color: #2c3e50;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Hero section with unique background per category */
+.companions-section.boyfriend {
+    background-color: #eaf6ff; /* Light blue for Boyfriend */
+}
+
+.companions-section.girlfriend {
+    background-color: #ffeaf3; /* Light pink for Girlfriend */
+}
+
+.companions-section.friends {
+    background-color: #f2ffe6; /* Light green for Friends */
+}
+
+.companions-section.family {
+    background-color: #fff5e6; /* Light beige for Family */
+}
+
+.companions-section.elders {
+    background-color: #f0e6ff; /* Light purple for Elders */
+}
+
+.companions-section.events {
+    background-color: #f9e6ff; /* Light violet for Events */
+}
+
+.companions-section h2 {
+    font-size: 2.2rem;
+    color: #34495e;
+    padding-top: 40px;
+    margin-bottom: 30px;
+}
+
+/* Companion grid */
+.companions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.companion-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    width: 250px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.companion-card:hover {
+    transform: translateY(-10px);
+}
+
+.companion-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.companion-info {
+    padding: 15px;
+}
+
+.companion-info h3 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.companion-info p {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.book-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.book-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Footer styles */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 50px;
+    position: relative;
+    width: 100%;
+}
+.worker-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.worker-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+}
+
+.worker-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
+}
+
+.worker-info {
+    padding: 15px;
+}
+
+.worker-info h3 {
+    font-size: 1.4rem;
+    margin: 10px 0;
+    color: #3d9bc0;
+}
+
+.worker-info p {
+    color: #555;
+    font-size: 1rem;
+    margin: 5px 0;
+}
+/* General form styling */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+fieldset {
+    margin-bottom: 20px;
+    border: none;
+}
+
+legend {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: #3d9bc0;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: #f57c00;
+    color: white;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #f44336;
+}
+
+/* Consent & Agreement checkboxes */
+label input[type="checkbox"] {
+    margin-right: 10px;
+}
+/* Other CSS rules in your styles.css file */
+
+/* Add this code at the end */
+.hero-buttons {
+    display: flex;
+    flex-direction: column; /* Stack the buttons vertically */
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Space between the buttons */
+}
+
+.cta-btn {
+    background-color: #f57c00;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    width: 200px; /* Ensures button width is equal */
+    text-align: center;
+}
+
+.cta-btn-be-one {
+    background-color: #4CAF50; /* Different color */
+    color: white;
+    padding: 8px 16px; /* Slightly smaller */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem; /* Smaller font */
+    transition: background-color 0.3s ease;
+    width: 180px; /* Ensures button width is smaller */
+    text-align: center;
+}
+
+.cta-btn:hover, .cta-btn-be-one:hover {
+    background-color: #f44336;
+}

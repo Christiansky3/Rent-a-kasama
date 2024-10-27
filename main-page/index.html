@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rent-A-Kasama</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 9999; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 8px;
+            z-index: 10000; /* Ensure it sits on top */
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .cta-btn {
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .cta-btn:hover {
+            background-color: #e69500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Rent-A-Kasama</h1>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#" id="authLink">Login</a></li> <!-- Login Link -->
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-section" style="background-image: url('assets/images/hero-background.jpg');">
+        <div class="content">
+            <h2>Welcome to Rent-A-Kasama</h2>
+            <p>Experience authentic companionship, rooted in Filipino values.</p>
+            <a href="#categories" class="cta-btn">Explore Companions</a>
+            <a href="register.html" class="cta-btn">Be One with Kasama</a>
+        </div>
+    </section>
+
+    <section id="categories" class="category-section">
+        <h2>Choose Your Kasama</h2>
+        <div class="category-cards">
+            <!-- Friend Companions -->
+            <div class="card">
+                <h3>Friend Companions</h3>
+                <p>Enjoy casual outings and social gatherings with a trusted companion.</p>
+                <a href="categories/friends.html" class="book-btn">Browse Friends</a>
+            </div>
+
+            <!-- Boyfriend Companions -->
+            <div class="card">
+                <h3>Boyfriend Companions</h3>
+                <p>Rent a boyfriend companion for outings, events, or just casual fun.</p>
+                <a href="categories/boyfriends.html" class="book-btn">Browse Boyfriends</a>
+            </div>
+
+            <!-- Girlfriend Companions -->
+            <div class="card">
+                <h3>Girlfriend Companions</h3>
+                <p>Rent a girlfriend companion for outings, events, or just casual fun.</p>
+                <a href="categories/girlfriends.html" class="book-btn">Browse Girlfriends</a>
+            </div>
+
+            <!-- Family-Like Companions -->
+            <div class="card">
+                <h3>Family-Like Companions</h3>
+                <p>Rent an Ate, Kuya, Tito, or Tita for family-like gatherings.</p>
+                <a href="categories/family.html" class="book-btn">Browse Family</a>
+            </div>
+
+            <!-- Elder Companions -->
+            <div class="card">
+                <h3>Elder Companions</h3>
+                <p>Connect with seniors for wisdom, companionship, and stories.</p>
+                <a href="categories/elders.html" class="book-btn">Browse Elders</a>
+            </div>
+
+            <!-- Event Companions -->
+            <div class="card">
+                <h3>Event Companions</h3>
+                <p>Never feel alone at events, weddings, or parties.</p>
+                <a href="categories/events.html" class="book-btn">Browse Event Companions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hidden Login Form (Modal) -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Login to Rent-A-Kasama</h2>
+            <form id="loginForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit" class="cta-btn">Login</button>
+            </form>
+            <p id="loginFeedback" style="color: red; display: none;"></p> <!-- Feedback message -->
+            <p>Don't have an account? <a href="signup-page/signup.html" id="signupRedirect">Sign Up here</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Rent-A-Kasama. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript to handle login and modal logic -->
+    <script>
+        // Handle login form submission
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Clear any previous feedback messages
+            const feedbackElement = document.getElementById('loginFeedback');
+            feedbackElement.style.display = 'none';
+            feedbackElement.textContent = '';
+
+            // Send login request to the server
+            fetch('http://localhost:3000/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: email, password: password }) // Send email and password to server
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    feedbackElement.style.color = 'green';
+                    feedbackElement.textContent = 'Login successful!';
+                    feedbackElement.style.display = 'block';
+                    localStorage.setItem('isLoggedIn', true);
+                    localStorage.setItem('userEmail', email);
+                    updateAuthLink();
+
+                    // Add debug log to track redirection
+                    console.log('Redirecting to main page...');
+
+                    // Redirect to main.html
+                    setTimeout(function() {
+                        window.location.href = 'main.html'; // Make sure main.html is in the root directory
+                    }, 1500);
+                } else {
+                    feedbackElement.style.color = 'red';
+                    feedbackElement.textContent = 'Login failed: ' + data.message;
+                    feedbackElement.style.display = 'block';
+                }
+            })
+            .catch(error => {
+                console.error('Error during login:', error);
+                feedbackElement.style.color = 'red';
+                feedbackElement.textContent = 'An error occurred. Please try again.';
+                feedbackElement.style.display = 'block';
+            });
+        });
+
+        // Close modal functionality
+        document.querySelector('.close-btn').addEventListener('click', function() {
+            document.getElementById('loginModal').style.display = 'none';
+        });
+
+        // Open modal when "Login" link is clicked
+        document.getElementById('authLink').addEventListener('click', function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (!isLoggedIn) {
+                document.getElementById('loginModal').style.display = 'block';
+            } else {
+                window.location.href = 'profile.html'; // Redirect to profile page
+            }
+        });
+
+        // Check if the user is logged in and update the Login button to Profile
+        function updateAuthLink() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            const authLink = document.getElementById('authLink');
+
+            if (isLoggedIn) {
+                authLink.textContent = 'Profile';
+                authLink.href = '#'; // Can link to profile
+            } else {
+                authLink.textContent = 'Login';
+                authLink.href = '#loginModal';
+            }
+        }
+
+        // Call this function when the page loads
+        updateAuthLink();
+    </script>
+
+</body>
+</html>

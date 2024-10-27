@@ -1,0 +1,130 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+}
+
+header {
+    background-color: #f57c00;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+    font-size: 2rem;
+}
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* Companions Section */
+.companions-section {
+    padding: 40px;
+    text-align: center;
+}
+
+.companions-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Companion Cards Grid */
+.companions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Individual Companion Card */
+.companion-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.companion-card:hover {
+    transform: translateY(-10px);
+}
+
+.companion-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.companion-info {
+    padding: 20px;
+    text-align: left;
+}
+
+.companion-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.companion-info p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Book Now Button */
+.book-btn {
+    display: inline-block;
+    background-color: #f57c00;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color: #f44336;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .companions-section h2 {
+        font-size: 2rem;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+}

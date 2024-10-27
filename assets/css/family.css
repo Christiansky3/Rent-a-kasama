@@ -1,0 +1,151 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7e7ce; /* Light beige background */
+}
+
+header {
+    background-color: #8d6e63; /* Warm brown header color */
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+    font-size: 2rem;
+}
+
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #5d4037;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* Companions Section */
+.companions-section {
+    padding: 40px;
+    text-align: center;
+}
+
+.companions-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Companion Cards Grid */
+.companions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Slightly wider columns */
+    gap: 30px; /* More space between cards */
+    justify-content: center;
+    padding: 20px 0;
+}
+
+/* Individual Companion Card */
+.companion-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    display: flex; /* Flexbox layout */
+    flex-direction: row; /* Align image and text horizontally */
+    align-items: center; /* Center image and text vertically */
+    padding: 20px; /* Padding inside the card */
+}
+
+.companion-card:hover {
+    transform: translateY(-10px);
+}
+
+.companion-img {
+    width: 150px; /* Fixed width for the image */
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; /* Circular images */
+    margin-right: 20px;
+}
+
+.companion-info {
+    text-align: left;
+}
+
+.companion-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.companion-info p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Book Now Button */
+.book-btn {
+    display: inline-block;
+    background-color: #8d6e63;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color: #5d4037;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .companions-section h2 {
+        font-size: 2rem;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+
+    .companions-grid {
+        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    }
+
+    .companion-card {
+        flex-direction: column; /* Stack image and text vertically on smaller screens */
+        align-items: flex-start;
+    }
+
+    .companion-img {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
