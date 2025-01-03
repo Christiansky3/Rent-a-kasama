@@ -1,0 +1,25 @@
+.header-cards-container {
+  color: var(--clr-neutral-100);
+  flex-direction: column;
+  gap: 4rem;
+  padding: 4rem 2rem;
+  background-color: var(--clr-neutral-600);
+}
+
+.header-cards-container .card {
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+.header-cards-container .card dt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: var(--fs-500);
+}
+
+.header-cards-container .card dd {
+  font-weight: 300;
+}

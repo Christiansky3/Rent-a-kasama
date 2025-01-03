@@ -1,0 +1,75 @@
+.nav {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  background-color: var(--clr-neutral-600);
+}
+
+.nav .menu-container .links-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: linear-gradient(
+    90deg,
+    var(--clr-neutral-600) 0%,
+    rgba(42, 61, 69, 0) 1539.33%
+  );
+  display: none;
+}
+
+.nav .menu-container .links-container.show {
+  display: flex;
+}
+
+.nav .menu-container .links-container .close-menu-btn {
+  align-self: flex-end;
+}
+
+.nav .menu-container .links {
+  width: 100%;
+  gap: 2.625rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.nav .menu-container .links .page-links-container,
+.nav .menu-container .links .account-links-container {
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.nav .menu-container .links .page-links-container li,
+.nav .menu-container .links .account-links-container li {
+  width: 100%;
+}
+
+.nav .menu-container .links .page-links-container li a,
+.nav .menu-container .links .account-links-container li a {
+  width: 100%;
+  display: flex;
+  font-size: var(--fs-400);
+  color: var(--clr-neutral-100);
+  padding-block: 1rem;
+}
+
+.nav .menu-container .links hr {
+  width: 100%;
+}
+
+.nav .menu-container .links .account-links-container li.signup-btn a {
+  border-radius: 2rem;
+  background-color: var(--clr-primary-100);
+}

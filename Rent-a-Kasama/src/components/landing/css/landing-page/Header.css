@@ -1,0 +1,67 @@
+header .hero-container {
+  width: 100%;
+  gap: 4rem;
+  flex-direction: column;
+  padding: 6.25rem 1rem;
+  background: linear-gradient(
+      0deg,
+      rgba(42, 61, 69, 0.7),
+      rgba(42, 61, 69, 0.7)
+    ),
+    url(../../../../assets/images/landing-page/header/image-1.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header .hero-container .header-container {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+header .hero-container .header-container .header {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--clr-neutral-100);
+  text-align: center;
+  text-transform: capitalize;
+  line-height: 1.05;
+}
+
+header .hero-container .header-container .sub-header {
+  font-weight: 400;
+  color: var(--clr-neutral-100);
+  text-align: center;
+}
+
+header .hero-container .buttons-container {
+  width: 100%;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+header .hero-container .buttons-container button {
+  width: 100%;
+}
+
+header .hero-container .buttons-container button a {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--clr-neutral-600);
+  text-transform: capitalize;
+  padding-block: 1rem;
+  border-radius: 2rem;
+}
+
+header .hero-container .buttons-container button:nth-child(1) a 
+{
+  background-color: var(--clr-primary-300);
+}
+
+header .hero-container .buttons-container button:nth-child(2) a 
+{
+  background-color: var(--clr-neutral-100);
+}

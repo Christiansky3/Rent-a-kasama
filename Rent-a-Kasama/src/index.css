@@ -1,0 +1,62 @@
+@import url(./components/landing/css/landing-page/Styles.css);
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+  list-style: none;
+  text-decoration: none;
+}
+
+button,
+input {
+  outline: 0;
+  border: 0;
+  background: none;
+}
+
+:root {
+  /* colors */
+  /* primary */
+  --clr-primary-100: #ff6f61;
+  --clr-primary-200: #ff9046;
+  --clr-primary-300: #ffd700;
+  --clr-primary-400: #00e052;
+  --clr-primary-500: #00c500;
+  --clr-primary-600: #3957ff;
+
+  /* neutral */
+  --clr-neutral-100: #ffffff;
+  --clr-neutral-200: #f1f4f5;
+  --clr-neutral-300: #f5f5dc;
+  --clr-neutral-400: #f5f5f5;
+  --clr-neutral-500: #7f7f7f;
+  --clr-neutral-600: #2a3d45;
+
+  /* font family */
+  ---ff-fstt: 'Fustat', sans-serif;
+
+  /* font sizes */
+  --fs-100: 0.75rem; /* 12px ÷ 16 = 0.75rem */
+  --fs-200: 0.875rem; /* 14px ÷ 16 = 0.875rem */
+  --fs-300: 1rem; /* 16px ÷ 16 = 1rem */
+  --fs-400: 1.125rem; /* 18px ÷ 16 = 1.125rem */
+  --fs-500: 1.5rem; /* 24px ÷ 16 = 1.5rem */
+
+  --d: 1px solid red;
+}
+
+body {
+  font-family: var(---ff-fstt);
+  font-size: var(--fs-300);
+  font-weight: 350;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
