@@ -1,0 +1,88 @@
+.footer-component {
+  width: min(100% - 2rem);
+  margin-inline: auto;
+  color: var(--clr-neutral-600);
+  text-align: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  background-color: hsl(198, 24%, 22%, 6%);
+}
+
+.footer-component > * {
+  width: 100%;
+}
+
+.footer-component .intro {
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer-component .intro .tagline {
+  font-size: 1.5rem;
+}
+
+.footer-component .intro .links {
+  width: 100%;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-component .intro .links > * {
+  width: 100%;
+  font-weight: 500;
+  color: var(--clr-neutral-600);
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.footer-component .intro .links a:nth-child(1) {
+  background-color: var(--clr-primary-300);
+}
+
+.footer-component .intro .links a:nth-child(2) {
+  background-color: var(--clr-neutral-100);
+}
+
+.footer-component .main {
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer-component .main .section,
+.footer-component .main .section .list,
+.footer-component .legal {
+  width: 100%;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-component .main .section .title,
+.footer-component .legal .title,
+.footer-component .legal .item .item-title {
+  font-weight: 700;
+}
+
+.footer-component .main .section .list li a {
+  color: var(--clr-neutral-600);
+}
+
+.footer-component .main .section.social-media .list {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer-component .main .section.social-media .list li a .link-text {
+  display: none;
+}
+
+.footer-component .legal .item {
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.footer-component .legal .copyright {
+  font-size: var(--fs-100);
+  font-weight: bold;
+}

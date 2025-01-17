@@ -1,0 +1,175 @@
+.signup-container {
+  flex-direction: column;
+  gap: 4rem;
+  color: var(--clr-neutral-600);
+  margin-block: 4rem;
+  padding: 0 1rem;
+}
+
+.signup-container .header {
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+.signup-container .header .title,
+.signup-container .form-container h2 {
+  font-size: calc(var(--fs-300) * 2);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.signup-container .header .subtitle {
+  font-size: 1.25rem;
+}
+
+.signup-container .form-container {
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.signup-container .form-container .form {
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.signup-container .form-container .form .form-group {
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.signup-container .form-container .form .form-group input {
+  width: 100%;
+  color: var(--clr-neutral-600);
+  padding: 0.8rem 1rem;
+  border-radius: 2rem;
+  border: 1px solid var(--clr-neutral-600);
+}
+
+.signup-container .form-container .form .button {
+  width: 100%;
+  color: var(--clr-neutral-100);
+  padding: 0.8rem 1rem;
+  border-radius: 2rem;
+  background-color: var(--clr-neutral-600);
+}
+
+.signup-container .form-container .form .basic-fields,
+.signup-container .form-container .form .profile-details {
+  width: 100%;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  gap: 2rem;
+}
+
+.signup-container .form-container .form .basic-fields h3,
+.signup-container .form-container .form .profile-details h4 {
+  font-weight: bold;
+  align-self: flex-start;
+}
+
+.signup-container
+  .form-container
+  .form
+  .profile-details
+  .form-group
+  .checkbox-container {
+  width: 100%;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.signup-container
+  .form-container
+  .form
+  .profile-details
+  .form-group
+  .checkbox-container
+  .checkbox {
+  width: 100%;
+  display: flex;
+}
+
+.signup-container
+  .form-container
+  .form
+  .profile-details
+  .form-group
+  .checkbox-container
+  .checkbox
+  label {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--clr-neutral-600);
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.signup-container
+  .form-container
+  .form
+  .profile-details
+  .form-group
+  .checkbox-container
+  .checkbox
+  input {
+  display: none;
+}
+
+.signup-container
+  .form-container
+  .form
+  .profile-details
+  .form-group
+  .checkbox-container
+  .checkbox
+  input:checked
+  + label {
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-neutral-600);
+}
+
+.signup-container .form-container .form .checkbox-wrapper {
+  gap: 0.5rem;
+  user-select: none;
+}
+
+/* Hide the default checkbox */
+.signup-container
+  .form-container
+  .form
+  .checkbox-wrapper
+  input[type='checkbox'] {
+  display: none;
+}
+
+/* Style the custom checkbox icon */
+.signup-container .form-container .form .checkbox-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url('../../../../assets/icons/landing-page/signup/tick-square.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-image 0.3s ease;
+  overflow: hidden;
+}
+
+.signup-container
+  .form-container
+  .form
+  .checkbox-wrapper
+  input[type='checkbox']:checked
+  + .checkbox-icon {
+  background-image: url('../../../../assets/icons/landing-page/signup/tick-square-checked.svg');
+}
+
+.signup-container .form-container .form .login-link {
+  font-weight: 600;
+  color: var(--clr-primary-100);
+}

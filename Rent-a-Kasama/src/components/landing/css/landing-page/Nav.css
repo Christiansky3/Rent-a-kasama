@@ -1,11 +1,14 @@
 .nav {
-  position: relative;
+  position: sticky;
+  top: 0;
+  left: 0;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 2rem 1rem;
   background-color: var(--clr-neutral-600);
+  z-index: 1000;
 }
 
 .nav .menu-container .links-container {

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import LogoLight from '../../assets/icons/landing-page/nav/logo-light.svg'
 import MenuBar from '../../assets/icons/landing-page/nav/menu.svg'
 import CloseMenu from '../../assets/icons/landing-page/nav/close-circle.svg'
@@ -12,11 +13,15 @@ function Nav() {
   return (
     <nav className='nav'>
       <div className='logo-container'>
-        <img src={LogoLight} alt='Rent A Kasama Logo' />
+        <Link to='/'>
+          <img src={LogoLight} alt='Rent A Kasama Logo' />
+        </Link>
       </div>
 
       <div className='menu-container flex-contaner'>
-        <div className={`links-container flex-center ${menuOpen? 'show' : ''}`}>
+        <div
+          className={`links-container flex-center ${menuOpen ? 'show' : ''}`}
+        >
           <button className='close-menu-btn' onClick={toggleMenu}>
             <img src={CloseMenu} alt='close-icon' />
           </button>
@@ -24,22 +29,22 @@ function Nav() {
           <ul className='links flex-center'>
             <div className='page-links-container flex-center'>
               <li>
-                <a href='#'>Home</a>
+                <Link to={'/'}>Home</Link>
               </li>
               <li>
-                <a href='#'>About Us</a>
+                <a href={'/about'}>About Us</a>
               </li>
               <li>
-                <a href='#'>Categories</a>
+                <Link to={'/categories'}>Categories</Link>
               </li>
               <li>
-                <a href='#'>Testimonials</a>
+                <a href='#testimonialSection'>Testimonials</a>
               </li>
               <li>
-                <a href='#'>FAQs</a>
+                <a href='#faqsSection'>FAQs</a>
               </li>
               <li>
-                <a href='#'>Contact Us</a>
+                <Link to={'/contact-us'}>Contact Us</Link>
               </li>
             </div>
 
@@ -47,14 +52,14 @@ function Nav() {
 
             <div className='account-links-container flex-center'>
               <li>
-                <a href='#' className='flex-center'>
+                <Link to={'/login'} className='flex-center'>
                   Login
-                </a>
+                </Link>
               </li>
               <li className='signup-btn flex-center'>
-                <a href='#' className='flex-center'>
+                <Link to={'/signup'} className='flex-center'>
                   Signup
-                </a>
+                </Link>
               </li>
             </div>
           </ul>

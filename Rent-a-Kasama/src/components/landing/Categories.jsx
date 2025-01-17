@@ -1,6 +1,7 @@
 import React from 'react'
 import RightArrow from '../../assets/icons/landing-page/about/arrow-right.svg'
 import CategoryImageIllustration from '../../assets/images/landing-page/categories/image-1.jpg'
+import { Link } from 'react-router-dom'
 
 function Categories() {
   return (
@@ -17,14 +18,18 @@ function Categories() {
               unique needs and experiences.
             </p>
 
-            <a href='#' className='categories-link flex-center'>
-              See kasama categories <img src={RightArrow} alt='right arrow icon' />
-            </a>
+            <Link to='/categories' className='categories-link flex-center'>
+              See kasama categories
+              <img src={RightArrow} alt='right arrow icon' />
+            </Link>
           </div>
         </div>
 
         <div className='image flex-center'>
-          <img src={CategoryImageIllustration} alt="kasama image illustration" />
+          <img
+            src={CategoryImageIllustration}
+            alt='kasama image illustration'
+          />
         </div>
       </div>
     </div>

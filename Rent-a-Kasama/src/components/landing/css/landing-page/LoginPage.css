@@ -1,0 +1,106 @@
+.login-container {
+  flex-direction: column;
+  gap: 4rem;
+  color: var(--clr-neutral-600);
+  margin-block: 4rem;
+  padding: 0 1rem;
+}
+
+.login-container .header {
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+.login-container .header .title,
+.login-container .form-container h2 {
+  font-size: calc(var(--fs-300) * 2);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.login-container .header .subtitle {
+  font-size: 1.25rem;
+}
+
+.login-container .form-container {
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.login-container .form-container .form {
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.login-container .form-container .form .form-group {
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.login-container .form-container .form .form-group input {
+  width: 100%;
+  color: var(--clr-neutral-600);
+  padding: 0.8rem 1rem;
+  border-radius: 2rem;
+  border: 1px solid var(--clr-neutral-600);
+}
+
+.login-container .form-container .form .button {
+  width: 100%;
+  color: var(--clr-neutral-100);
+  padding: 0.8rem 1rem;
+  border-radius: 2rem;
+  background-color: var(--clr-neutral-600);
+}
+
+.login-container .form-container .form .checkbox-wrapper {
+  gap: 0.5rem;
+  user-select: none;
+}
+
+/* Hide the default checkbox */
+.login-container .form-container .form .checkbox-wrapper input[type='checkbox'] {
+  display: none;
+}
+
+/* Style the custom checkbox icon */
+.login-container .form-container .form .checkbox-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url('../../../../assets/icons/landing-page/signup/tick-square.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-image 0.3s ease;
+  overflow: hidden;
+}
+
+.login-container .form-container .form .checkbox-wrapper input[type='checkbox']:checked + .checkbox-icon {
+  background-image: url('../../../../assets/icons/landing-page/signup/tick-square-checked.svg');
+}
+
+.login-container .form-container .form .login-link {
+  font-weight: 600;
+  color: var(--clr-primary-100);
+}
+
+.login-container .form-container .form  .auth-actions {
+  width: 100%;
+  flex-direction: column;
+  gap: 1rem;
+  font-weight: 500;
+}
+
+.login-container .form-container .form  .auth-actions .forgot-password {
+  color: var(--clr-primary-100);
+}
+
+.login-container .form-container .form  .auth-actions .signup-link{
+  color: var(--clr-neutral-600);
+}

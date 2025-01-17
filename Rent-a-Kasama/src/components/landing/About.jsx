@@ -1,5 +1,6 @@
 import React from 'react'
 import RightArrow from '../../assets/icons/landing-page/about/arrow-right.svg'
+import { Link } from 'react-router-dom'
 
 function About() {
   return (
@@ -29,9 +30,9 @@ function About() {
             who offer genuine companionship, memorable conversations, and a deep
             sense of understanding.
           </p>
-          <a href='#' className='about-link flex-center'>
+          <Link to='/about' className='about-link flex-center'>
             Read more <img src={RightArrow} alt='right arrow icon' />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

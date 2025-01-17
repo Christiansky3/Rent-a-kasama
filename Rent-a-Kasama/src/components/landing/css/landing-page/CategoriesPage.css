@@ -1,0 +1,94 @@
+.categories-container {
+  flex-direction: column;
+  gap: 4rem;
+  color: var(--clr-neutral-600);
+  margin-block-start: 6.25rem;
+  padding: 0 1rem;
+}
+
+.categories-container .headers {
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+}
+
+.categories-container .headers .header .subtitle {
+  font-size: 1.25rem;
+}
+
+.categories-container .headers .header .title {
+  font-size: calc(var(--fs-300) * 2);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.categories-container .headers .description {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  text-transform: capitalize;
+}
+
+.categories-container .grid {
+  width: 100%;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.categories-container .grid .card {
+  position: relative;
+  width: 100%;
+  height: 6.25rem;
+  border-radius: 1rem;
+  background-position: bottom 38% center;
+  background-size: 100%;
+  overflow: hidden;
+}
+
+.categories-container .grid .card .name {
+  font-size: var(--fs-500);
+  color: var(--clr-neutral-100);
+  gap: 0.5rem;
+}
+
+.categories-container .grid .card.friend {
+  background-image: url('../../../../assets/images/landing-page/categories-page/friend.jpg');
+}
+
+.categories-container .grid .card.boyfriend {
+  background-image: url('../../../../assets/images/landing-page/categories-page/boyfriend.jpg');
+  background-position: bottom 63% center;
+}
+
+.categories-container .grid .card.girlfriend {
+  background-image: url('../../../../assets/images/landing-page/categories-page/girlfriend.jpg');
+  background-position: bottom 68% center;
+}
+
+.categories-container .grid .card.family {
+  background-image: url('../../../../assets/images/landing-page/categories-page/family.jpg');background-position: bottom 58% center;
+}
+
+.categories-container .grid .card.elder {
+  background-image: url('../../../../assets/images/landing-page/categories-page/elder.jpg');
+  background-position: bottom 28% center;
+}
+
+.categories-container .grid .card.event {
+  background-image: url('../../../../assets/images/landing-page/categories-page/event.jpg');
+}
+
+.categories-container .grid .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(180, 25%, 25%, 60%);
+}
+
+.categories-container .grid .name,
+.categories-container .grid .icon {
+  position: inherit;
+  z-index: 1;
+}
