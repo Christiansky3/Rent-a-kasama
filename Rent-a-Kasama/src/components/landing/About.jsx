@@ -11,7 +11,7 @@ function About() {
 
           <div className='heading flex-center'>
             <h2 className='main-heading'>
-              Discover the Header of Rent-A-Kasama
+              Discover the Heart of Rent-A-Kasama
             </h2>
 
             <p className='subheading'>

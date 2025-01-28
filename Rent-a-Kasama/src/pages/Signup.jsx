@@ -10,30 +10,34 @@ function Signup() {
 
       <div className='signup-container flex-center'>
         <div className='header flex-center'>
-          <h1 className='title'>Join the Rent-A-Kasama Community!</h1>
-          <p className='subtitle'>
-            Whether you're here to find a companion or become one, let's start
-            this journey together.
-          </p>
-
-          <div className='kasamas-section'>
-            <p className='span-title'>For Kasamas</p>
-            <p className='description'>
-              Share your time, connect with others, and become a trusted Kasama.
-              Sign up to be part of something meaningful.
+          <div className='header-container'>
+            <h1 className='title'>Join the Rent-A-Kasama Community!</h1>
+            <p className='subtitle'>
+              Whether you're here to find a companion or become one, let's start
+              this journey together.
             </p>
           </div>
-          <div className='clients-section'>
-            <p className='span-title'>For Clients</p>
-            <p className='description'>
-              Find the perfect companion for every occasion. Sign up to start
-              your journey.
-            </p>
+
+          <div className='sections-container flex-center'>
+            <div className='kasamas-section flex-center'>
+              <p className='span-title'>For Kasamas</p>
+              <p className='description'>
+                Share your time, connect with others, and become a trusted
+                Kasama. Sign up to be part of something meaningful.
+              </p>
+            </div>
+            <div className='clients-section flex-center'>
+              <p className='span-title'>For Clients</p>
+              <p className='description'>
+                Find the perfect companion for every occasion. Sign up to start
+                your journey.
+              </p>
+            </div>
           </div>
         </div>
 
         <div className='form-container flex-center'>
-          <h2>Signup</h2>
+          <h2>Create an account</h2>
           <form className='form flex-center' action=''>
             <div className='basic-fields flex-center'>
               <h3>Basic Fields</h3>
@@ -201,19 +205,21 @@ function Signup() {
                   </div>
                 </div>
               </div>
+
+              <div className='checkbox-wrapper flex-center'>
+                <input type='checkbox' name='tnc' id='tnc' />
+                <span className='checkbox-icon'></span>
+                <label htmlFor='tnc'>I agree to the Terms and Conditions</label>
+              </div>
+
+              <Link to='/login' className='login-link'>
+                Already have an account? Login
+              </Link>
+
+              <button className='button' type='submit'>
+                Submit
+              </button>
             </div>
-
-            <div className='checkbox-wrapper flex-center'>
-              <input type='checkbox' name='tnc' id='tnc' />
-              <span className='checkbox-icon'></span>
-              <label htmlFor='tnc'>I agree to the Terms and Conditions</label>
-            </div>
-
-            <Link to='/login' className='login-link'>Already have an account? Login</Link>
-
-            <button className='button' type='submit'>
-              Submit
-            </button>
           </form>
         </div>
       </div>

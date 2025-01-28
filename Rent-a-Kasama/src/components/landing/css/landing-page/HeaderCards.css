@@ -17,9 +17,21 @@
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  font-size: var(--fs-500);
+  font-size: clamp(var(--fs-500), 0.6479rem + 1.5023vw, 2rem);
 }
 
 .header-cards-container .card dd {
   font-weight: 300;
+}
+
+/* 1440px */
+@media screen and (min-width: 90rem) {
+  .header-cards-container {
+    flex-direction: row;
+  }
+
+  .header-cards-container .card {
+    align-items: flex-start;
+    padding: 1.25rem 2rem;
+  }
 }

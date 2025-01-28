@@ -25,8 +25,13 @@
 
 .about-section .header .heading .main-heading {
   font-size: calc(var(--fs-300) * 2);
+  font-size: clamp(calc(var(--fs-300) * 2), 1.2958rem + 3.0047vw, 4rem);
   font-weight: 400;
   line-height: 1.2;
+}
+
+.about-section .header .heading .subheading {
+  font-size: clamp(1.25rem, 1.162rem + 0.3756vw, 1.5rem);
 }
 
 .about-section .header .description {
@@ -36,6 +41,7 @@
 }
 
 .about-section .header .description .text {
+  font-size: clamp(1rem, 0.8239rem + 0.7512vw, 1.5rem);
   line-height: 1.5;
 }
 
@@ -45,4 +51,45 @@
   color: var(--clr-neutral-600);
   text-decoration: underline;
   text-underline-offset: 0.2rem;
+}
+
+/* 768px */
+@media screen and (min-width: 48rem) {
+  .about-section {
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+    width: min(100% - 4rem);
+    padding-inline: 0;
+  }
+
+  .about-section .header {
+    align-items: flex-start;
+  }
+}
+
+/* 1020px */
+@media screen and (min-width: 63.75rem) {
+  .about-section {
+    max-width: 75rem;
+  }
+
+  .about-section .header {
+    flex-direction: row;
+    align-items: center;
+    gap: 7.25rem;
+  }
+
+  .about-section .header > * {
+    flex: 1;
+  }
+
+  .about-section .header .intro {
+    gap: 4rem;
+  }
+
+  .about-section .header .intro .heading .main-heading {
+    width: 100%;
+    max-width: 26rem;
+  }
 }
